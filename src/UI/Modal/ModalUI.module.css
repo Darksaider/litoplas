@@ -1,0 +1,50 @@
+/* Modal overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    /*justify-content: center;*/
+    align-items:  flex-start;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 100;
+}
+
+/* Modal content */
+.modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    min-width: 300px;
+    width: 100%;
+    transform: translateX(-100vh); /* Початкова позиція зверху */
+    transition: transform 1s ease;
+}
+
+/* Close button */
+.modalClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+/* Classes for showing the modal */
+.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modalContent.show {
+    transform: translateX(0); /* Кінцева позиція при відкритті */
+}

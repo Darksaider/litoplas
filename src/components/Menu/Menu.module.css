@@ -1,0 +1,82 @@
+.menu{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 100px;
+    padding: 75px 0;
+}
+.catalog{}
+.companyServices{}
+.aboutCompany{}
+.titleMenu{
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    color: #126FB4;
+position: relative;
+    padding: 0 20px 10px 20px;
+    gap: 10px;
+
+}
+.accText{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color:  #525558;
+;
+
+}
+.accList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.accSubList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.titleMenu::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #126FB4;
+    bottom: 0;
+    left: 0;
+}
+.closed{
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    font-size: 18px;
+}
+.open{
+    cursor: pointer;
+    font-size: 18px;
+    color: #126FB4;
+}
+.subTitleMenu{
+    cursor: pointer;
+    font-size: 18px;
+}
+.accOpen {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 10px;
+    border-top: none;
+}
+
+.acClosed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    padding: 0 10px;
+    border-top: none;
+}
+

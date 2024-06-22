@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.burgerMenu {
+    display: inline-block;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    position: relative;
+
+}
+
+.burgerMenu span {
+    display: block;
+    background-color: #ffffff;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateY(-50%);
+}
+
+.burgerMenu span::before,
+.burgerMenu span::after {
+    content: '';
+    background-color: #ffffff;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    left: 0;
+}
+
+.burgerMenu span::before {
+    top: -7px;
+}
+
+.burgerMenu span::after {
+    top: 7px;
+}
+
+.lang {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    text-align: left;
+    color: rgba(38, 46, 52, 0.5);
+    cursor: pointer;
+}
+
+.langActive {
+
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19px;
+    text-align: left;
+    color: #126FB4;
+    cursor: default;
+}

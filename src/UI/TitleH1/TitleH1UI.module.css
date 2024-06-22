@@ -1,0 +1,10 @@
+.h1{
+    /*font-family: Code Pro LC;*/
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 86px;
+    text-align: left;
+    color: #126FB4;
+    white-space: nowrap;
+
+}
