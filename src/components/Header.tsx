@@ -4,6 +4,7 @@ import cl from "./header.module.css"
 import React, {useState} from "react";
 import Modal from "../UI/Modal/Modal.tsx";
 import Menu from "./Menu/Menu.tsx";
+import FeedBackForm from "./FeedBackForm.tsx";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +22,7 @@ const Header = () => {
             <BlueBTNUI onClick={toggleHandler}> <span className={cl.burgerMenu}> <span></span></span> Меню</BlueBTNUI>
             <LogoUi/>
 
-            <form action=""></form>
+            <FeedBackForm/>
             <div className="selectLang">
                 {languages.map((e, i) => (<React.Fragment key={i}>.
                         {i === 1 && "/"}

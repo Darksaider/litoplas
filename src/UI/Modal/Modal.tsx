@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, CSSProperties } from 'react';
 import cl from './ModalUI.module.css';
 
-interface ModalProps {
+
+interface Variable {
+    nameVariable: string;
+    valueVariable: string;
+}
+
+ interface ModalProps {
     isOpen: boolean;
     onClose: () => void;
     children: React.ReactNode;
+    variable?: Variable;
 }
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, variable }) => {
     const [visible, setVisible] = useState(false);
     const [animate, setAnimate] = useState(false);
 
@@ -26,15 +33,28 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         }
     }, [isOpen]);
 
+
+    // Явне вказівка типу для об'єкта стилів
+    const modalStyle: { [key: string]: string } = {
+        '--feedback': variable?.valueVariable || 'false',
+    };
+
     return visible ? (
-        <div className={`${cl.modalOverlay} ${animate ? cl.show : ''}`} onClick={onClose}>
-            <div className={`${cl.modalContent} ${animate ? cl.show : ''}`} onClick={e => e.stopPropagation()}>
-                <button className={cl.modalClose} onClick={onClose}>
-                    &times;
-                </button>
-                {children}
+        <div  style={modalStyle as CSSProperties} className={`${cl.modalOverlay} ${animate ? cl.show : ''}`}>
+            <div className={cl.modalWrapper}
+                 onClick={onClose}>
+
+                <div className={`${cl.modalContent} ${animate ? cl.show : ''}`} onClick={e => e.stopPropagation()}>
+                    <button className={cl.modalClose} onClick={onClose}>
+                        &times;
+                    </button>
+                    {children}
+                </div>
+
+
             </div>
         </div>
+
     ) : null;
 };
 
