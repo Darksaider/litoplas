@@ -28,7 +28,7 @@
 /* Modal content */
 .modalContent {
     background: white;
-    padding: 20px;
+
     border-radius: 5px;
     position: relative;
     min-width: 300px;
@@ -36,6 +36,21 @@
     transform: translateX(-100vh); /* Початкова позиція зверху */
     transition: transform 1s ease;
 }
+
+/*form input::placeholder {*/
+
+/*    !*font-family: Gilroy;*!*/
+/*    font-size: 16px;*/
+/*    font-weight: 400;*/
+/*    line-height: 100px;*/
+/*    text-align: left;*/
+
+/*}*/
+
+/* Ваш стиль у CSS-модулі */
+
+
+
 
 /* Close button */
 .modalClose {

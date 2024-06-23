@@ -38,7 +38,9 @@ const FeedBackForm = () => {
             <button onClick={() => setIsOpenFeedBackForm(true)} className={cl.openButton}>Open</button>
             <Modal variable={variable} isOpen={isOpenFeedBackForm} onClose={onCloseFeedBackFormHandler}>
                 <div className={cl.feedbackWrapper}>
+                    <span className={cl.closeBtn}></span>
                     <div className={cl.feedbackFormContainer}>
+                        <h2 className={cl.feedbackH2}>Форма обратной связи</h2>
                         <form onSubmit={handleSubmit}>
                             <div className={cl.feedbackInputsColumn}>
                                 <input
@@ -65,6 +67,7 @@ const FeedBackForm = () => {
                                     placeholder="Ваш e-mail"
                                 />
                                 <input
+                                    className={cl.d}
                                     name="userThemeMessage"
                                     type="text"
                                     value={feedbackData.userThemeMassage}

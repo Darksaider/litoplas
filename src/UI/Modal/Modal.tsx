@@ -45,9 +45,6 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, variable }) =>
                  onClick={onClose}>
 
                 <div className={`${cl.modalContent} ${animate ? cl.show : ''}`} onClick={e => e.stopPropagation()}>
-                    <button className={cl.modalClose} onClick={onClose}>
-                        &times;
-                    </button>
                     {children}
                 </div>
 
