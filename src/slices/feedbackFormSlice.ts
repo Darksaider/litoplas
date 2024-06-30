@@ -1,15 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export interface FeedbackFormState {
-    userName: string;
-    userEmail: string;
-    userPhone: string;
-    userThemeMassage: string;
-    userMassage: string;
-    userThemeRequest: string;
-}
+import {IFeedbackFormFields} from "../components/intergeces.ts";
 
- const initialState: FeedbackFormState = {
+ const initialState: IFeedbackFormFields = {
     userName: '',
     userEmail: '',
     userPhone: '',
@@ -22,7 +15,7 @@ export const feedbackFormSlice = createSlice({
     name: 'FeedbackForm',
     initialState,
     reducers: {
-        setValuesFeedbackForm: (state, action: PayloadAction<{ name: keyof FeedbackFormState; value: string }>) => {
+        setValuesFeedbackForm: (state, action: PayloadAction<{ name: keyof IFeedbackFormFields; value: string }>) => {
             const { name, value } = action.payload;
             state[name] = value;
         },
